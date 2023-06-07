@@ -94,16 +94,16 @@ export default function Footer() {
 								<li className="heading">Sitemap</li>
 								<li>
 									{" "}
-									<Link>Home</Link>{" "}
+									<Link to='/' >Home</Link>{" "}
 								</li>
 								<li>
-									<Link>About Us</Link>{" "}
+									<Link to='/about'  >About Us</Link>{" "}
 								</li>
 								<li>
-									<Link>Recipes</Link>
+									<Link to='/recipes' >Recipes</Link>
 								</li>
 								<li>
-									<Link>Kid's Corner</Link>
+									<Link to='/kids' >Kid's Corner</Link>
 								</li>
 							</ul>
 						</div>

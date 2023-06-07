@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
 export default function Kids() {
-  return (
+	return (
 		<>
 			<section className="kids">
 				<div className="container back">
@@ -29,5 +29,5 @@ export default function Kids() {
 				</div>
 			</section>
 		</>
-  );
+	);
 }

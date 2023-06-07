@@ -163,7 +163,7 @@ export default function About(props) {
 								/>
 							</div>
 							<div className="card-body">
-								<h2>Commitment</h2>
+								<h2>Excellence</h2>
 								<p>
 									We strive to be the best in our business. We
 									improve all the time, In all aspects and

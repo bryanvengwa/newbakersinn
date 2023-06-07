@@ -1,10 +1,10 @@
-import React from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import Overlay from '../components/Overlay';
+import React from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import Overlay from "../components/Overlay";
 
 export default function Kids(props) {
-  return (
+	return (
 		<>
 			<Navbar isOpen={props.isOpen} toggle={props.toggle} />
 			<Overlay isOpen={props.isOpen} toggle={props.toggle} />
@@ -129,5 +129,5 @@ export default function Kids(props) {
 
 			<Footer />
 		</>
-  );
+	);
 }

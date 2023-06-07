@@ -70,7 +70,7 @@ a{.logo{ height: 3rem; width: 12rem; z-index: 1; margin-left: 0em;  img{ margin-
        button{@include buttons; a{color: white; text-decoration: none; } margin-top: -5%; margin-right: 1.5em;  display: none; }
        }
     .menu{ background: $gold; padding: 0.1em; border-radius: 5px; display: flex; justify-content: center; align-items: center; flex-direction: column;
-          z-index: 3000; position:absolute; height: 4.1rem; width: 4.5rem; right: 3rem; top: 2rem !important;
+          z-index: 3000; position:absolute; height: 4.1rem; width: 4.5rem; right: 1rem; top: 0.7rem !important;
         .bar{ border-radius: 5px; background: $blue; z-index: 3000; margin: 0.2em; height: 8px; width: 80%; }
 
     }  
@@ -225,7 +225,7 @@ th{   padding: 0.5em; font-family: 'black'; font-size: 1.35rem; border-bottom: 3
 .kids{   .gradient{background-image: url('../public/imgs/african.png'); background-size: contain; left: 0; bottom: 0; width: 100%;height: 100%;}
        .back{background: $blue; border-radius: 5px; }
        .mario{ display: flex; justify-content: center; align-items: center;
-       img{height: 120%; width: 150%; margin-left: 3em; }
+       img{height: 120%; width: 150%; margin-left: 4em; }
        }
        .text{ color: white; display: flex; justify-content: center; flex-direction: column;text-align: center; 
        h1{font-family: 'dumb'; font-size: 6rem; margin-top: 1em; width: 100%; }
@@ -257,7 +257,7 @@ th{   padding: 0.5em; font-family: 'black'; font-size: 1.35rem; border-bottom: 3
               } .active{display: block; }
               .hidden{display: none;} 
               .recipes{font-family: 'black'; color: $blue; font-size: 1.6rem; } 
-             
+             .down{margin-top: -1em !important;        }
               
               .flexbox-container{ display: flex; justify-content: space-between;
                      .text-container{  h5{font-size: 0.99rem; span{color:$gold;} }
@@ -273,16 +273,46 @@ th{   padding: 0.5em; font-family: 'black'; font-size: 1.35rem; border-bottom: 3
 }
    
 }
-#recipe{  margin-bottom: 3em;   
+////////////////////// SLIDERMODAL 
+.background-modal{ width: 100%; flex-direction: column-reverse; transform: translateX(-50% 50%); position: relative; font-family: 'black'; padding: 2em; display: flex; justify-content: center;  align-items: center;  z-index: 300; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+       button{border-radius: 50%; right: 1em; top: 1em; position: absolute; background: $blue; color: white; border: none; font-size: 2rem; height: 2.2rem; width: 2.2rem; display: flex; justify-content: center; align-items: center; }
+       .flex-container{ display: flex;}
+       .gaba{flex-wrap: wrap; width: 100%;}
+       .flex-containerA{ margin-bottom: 1.5em;  margin-top: 1.5em; display: flex; align-items: center; justify-content: center; height: 100%;  p{height: 100%;}
+               .circle-container{ margin-top: -0.99em; img{width: 80%; height: 80%; object-fit: contain; } } }
+       .left-container{width: 100%; .big{width :95%} }
+       .flex-containers{ display: flex; margin-top: 1em; justify-content: space-around; }
+       .img-container{ width: 100%;height: 100%; img{object-fit: contain;  height: 90%; width: 90%;}}
+       .right-container{color: $blue; width: 100%; align-self: flex-start;
+              .flex-container{ display: flex; align-items: center; justify-content: flex-start; }
+              .headings{display: flex; margin-left: -1em; font-family: 'black'; justify-content: flex-start; justify-content: center; align-items: center;  
+                     h1{justify-self: flex-start;  }
+              .line{height: 4px; min-width: 20%; margin-left: 1em; background: $gold; }
+              .liner{margin-left: 1em;}
+              }
+              .ball{ height: 3rem; width: 3rem; background: $gold; border-radius: 50%; }
+              .lists{display: flex; flex-wrap: wrap; ul{li{font-family: 'light'; line-height: 2em;}} }
+              .directions{ display: flex; flex-wrap: wrap; 
+                     .direction{p{font-family: 'light'; } width: 100%;}
+              }
+       
+       }
+
+}
+#recipe{  margin-bottom: 3em; overflow-x: hidden;   
 // Our premium whole grain loaves are packed with nutrients including protein, fibre B, vitamins, antioxidants and trace minerals. A diet with whole grain has been shown to reduce the risk of heart disease and diabetes. The standard loaf has 18 slices
        
        // width: 200vw; 
        // #flex{ overflow-y: scroll; width: 100vw;   }
        // .center{overflow-x: hidden;}
-    
-       .flex-container{ margin-top: 2em; flex-wrap: nowrap; overflow-x: scroll;  display: inline-flex;   height: fit-content;
-              .card{ background: $gfade;   height: auto;   flex: 0 0 auto;  margin-right: 20px;   display: inline-block; max-width: none; z-index: 2000;
-  vertical-align: top;
+    .scrollable-div {
+  overflow-x: scroll;
+//   white-space: nowrap;
+}
+       .flex-container{ margin-top: 2em;   display: inline-flex; align-items: center; width:100%;   height: fit-content;  
+              .card{ background: $gfade; max-width: 22rem !important;  height: auto;   flex: 0 0 auto;     display: inline-block;z-index: 2000;
+  vertical-align: top; 
+                     
                      .img-container{ height: 22rem; display: flex; justify-content:  center; img{height: 100%; width: unset; margin-top: -3em;}}
                      .second-container{ height: 18rem;}
                      .card-body{ margin-top: -3em; display: flex; flex-direction: column; align-items: center;}
@@ -427,6 +457,30 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 @media (min-width: 768px) {  
+       .background-modal{ width: 100vw;  transform: translateX(-50% 50%); position: relative; font-family: 'black'; padding: 2em; display: flex;  justify-content: center;  align-items: center;  z-index: 300; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+       button{border-radius: 50%; right: 1em; top: 1em; position: absolute; background: $blue; color: white; border: none; font-size: 2rem; height: 2.2rem; width: 2.2rem; display: flex; justify-content: center; align-items: center; }
+       .flex-container{ display: flex;}
+       .flex-containerA{ margin-bottom: 1.5em;  margin-top: 1.5em; display: flex; align-items: center; justify-content: center; height: 100%; width: 30%; p{height: 100%;}
+               .circle-container{ margin-top: -0.99em; img{width: 80%; height: 80%; object-fit: contain; } } }
+       .left-container{width: 100%; .big{width :95%} }
+       .flex-containers{ display: flex; margin-top: 1em; justify-content: space-around; }
+       .img-container{ width: 100%;height: 100%; img{object-fit: contain;  height: 90%; width: 90%;}}
+       .right-container{color: $blue; width: 100%; align-self: flex-start;
+              .flex-container{ display: flex; align-items: center; justify-content: flex-start; }
+              .headings{display: flex; margin-left: -1em; font-family: 'black'; justify-content: flex-start; justify-content: center; align-items: center;  
+                     h1{justify-self: flex-start;  }
+              .line{height: 4px; min-width: 60%; margin-left: 1em; background: $gold; }
+              .liner{margin-left: 2em;}
+              }
+              .ball{ height: 3.7rem; width: 3.7rem; background: $gold; border-radius: 50%; }
+              .lists{display: flex; flex-wrap: nowrap; ul{li{font-family: 'light'; line-height: 2em;}} }
+              .directions{ display: flex; flex-wrap: wrap; 
+                     .direction{p{font-family: 'light'; } width: 100%;}
+              }
+       
+       }
+
+}
          .nav{
                margin-bottom: 4em; a{.logo{ height: 3rem; width: 12rem; z-index: 1; margin-left: 0em;  img{ margin-top: 2em; margin-left: 2.7em;  width: 100%; object-fit: contian; }}}
 
@@ -447,7 +501,7 @@ No media query since this is the default in Bootstrap because it is "mobile firs
        .bookings{ p{width: 100%;} button{width: 70%;} }
        .donate{ p{width: 100%;} button{width: 70%;} }
        #donate{p{width: unset;}}
-       .kids{.mario{img{width: 100%; height: 110%; margin-left: -5em;  }}
+       .kids{ .text{margin-left: -3em;} .mario{img{width: 100%; height: 110%; margin-left: -6em;  }}
        .text{ button{width: 80%;  }} }
        #kids-header{   #flex-container{ display: flex; align-items: center; justify-content: center;  .text-container{display: flex; align-items: center; justify-content: center; h1{color: $blue; font-size: 6rem; font-family: 'dumb'; } }
        .img-container{ img{width: 100%; box-sizing: border-box; margin-top: -3em; }  }
@@ -552,7 +606,7 @@ ul{li{
            .bookings{ p{width: 100%;} button{width: 50%;} }
                .donate{ p{width: 100%;} button{width: 50%;} }
                
-            .kids{.text{ button{width: 30%;  }} .mario{ img{height: 110%; width: 120%; margin-left: -4em; }}
+            .kids{.text{ button{width: 30%;  }} .mario{ img{height: 110%; width: 120%; margin-left: -7em; }}
           
        }
                        .promotions{ 
@@ -657,6 +711,30 @@ ul{li{
 .modalB{min-height: 50%; }
 }
 
+ .background-modal{ margin-top: -14em; left: 50%; background: white; width: 90%; position: absolute; transform: translate(-50% ,-50%); flex-wrap: nowrap; flex-direction: row;  transform: translateX(-50% 50%);  font-family: 'black'; padding: 2em; display: flex;  justify-content: center;  align-items: center;  z-index: 300; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+       button{border-radius: 50%; right: 1em; top: 1em; position: absolute; background: $blue; color: white; border: none; font-size: 2rem; height: 2.2rem; width: 2.2rem; display: flex; justify-content: center; align-items: center; }
+       .flex-container{ display: flex;}
+       .flex-containerA{ margin-bottom: 1.5em;  margin-top: 1.5em; display: flex; align-items: center; justify-content: center; height: 100%; width: 30%; p{height: 100%;}
+               .circle-container{ margin-top: -0.99em; img{width: 80%; height: 80%; object-fit: contain; } } }
+       .left-container{width: 40%; .big{width :95%} }
+       .flex-containers{ display: flex; margin-top: 1em; justify-content: space-around; }
+       .img-container{ width: 100%;height: 100%; img{object-fit: contain;  height: 90%; width: 90%;}}
+       .right-container{color: $blue; width: 60%; align-self: flex-start;
+              .flex-container{ display: flex; align-items: center; justify-content: flex-start; }
+              .headings{display: flex; margin-left: 0.1em; font-family: 'black'; justify-content: flex-start; justify-content: center; align-items: center;  
+                     h1{justify-self: flex-start;  }
+              .line{height: 4px; min-width: 60%; margin-left: 1em; background: $gold; }
+              .liner{margin-left: 2.99em;}
+              }
+              .ball{ height: 3.7rem; width: 3.7rem; background: $gold; border-radius: 50%; }
+              .lists{display: flex; flex-wrap: nowrap; ul{li{font-family: 'light'; line-height: 2em;}} }
+              .directions{ display: flex; flex-wrap: wrap; 
+                     .direction{p{font-family: 'light'; } width: 50%;}
+              }
+       
+       }
+
+}
 
       
 }

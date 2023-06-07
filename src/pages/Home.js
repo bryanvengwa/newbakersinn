@@ -1,33 +1,35 @@
-import React , {useState} from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import Slider from '../components/Slider';
-import Overlay from '../components/Overlay';
-import HomeProductsRange from '../components/HomeProductsRange';
-import HomeHeader from '../components/HomeHeader';
-import HomeAbout from '../components/HomeAbout';
-import Promotions from '../components/Promotions';
-import Kids from '../components/Kids';
+import React, { useState } from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import Slider from "../components/Slider";
+import Overlay from "../components/Overlay";
+import HomeProductsRange from "../components/HomeProductsRange";
+import HomeHeader from "../components/HomeHeader";
+import HomeAbout from "../components/HomeAbout";
+import Promotions from "../components/Promotions";
+import Kids from "../components/Kids";
+import SliderModal from "../components/SliderModal";
 export default function Home(props) {
+	const [showmodal, setShowModal] = useState(false);
+	const [showDonation, setShowDonation] = useState(false);
+	//        //////////////// current data
 
-       const [ showmodal , setShowModal  ] = useState(false);
-       const [showDonation , setShowDonation ] = useState(false);
-       function booking (){
-              setShowModal(old=> !old)
-       }
-       function donation (){
-              setShowDonation(old=> !old)
-       }
-       
-  return (
+	function booking() {
+		setShowModal((old) => !old);
+	}
+	function donation() {
+		setShowDonation((old) => !old);
+	}
+	
+
+	return (
 		<>
 			<Navbar isOpen={props.isOpen} toggle={props.toggle} />
 			<Overlay isOpen={props.isOpen} toggle={props.toggle} />
-			<HomeHeader/>
-			<HomeAbout/>
-			<HomeProductsRange/>
-			
-			
+			<HomeHeader />
+			<HomeAbout />
+			<HomeProductsRange />
+
 			<section className="bookings">
 				<div className="container">
 					<div className="row">
@@ -368,12 +370,23 @@ export default function Home(props) {
 					</div>
 				</div>
 			</section>
-			<Kids/>
+			<Kids />
 
-			<Slider {...props.headers} />
+			<Slider
+				{...props.headers}
+				RecipeModal={props.RecipeModal}
+				activeTab={props.activeTab}
+				handleTabClick={props.handleTabClick}
+			/>
+			{props.ShowRecipeModal && (
+				<SliderModal
+					RecipeModal={props.RecipeModal}
+					{...props.currentData}
+				/>
+			)}
 
-			<Promotions/>
+			<Promotions />
 			<Footer />
 		</>
-  );
+	);
 }
