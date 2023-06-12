@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function Footer() {
   return (
 		<>
-	<footer>
+			<footer>
 				<div className="container-fluid back">
 					<div className="row">
 						<div className="logo">
@@ -94,16 +94,16 @@ export default function Footer() {
 								<li className="heading">Sitemap</li>
 								<li>
 									{" "}
-									<Link to='/' >Home</Link>{" "}
+									<Link to="/">Home</Link>{" "}
 								</li>
 								<li>
-									<Link to='/about'  >About Us</Link>{" "}
+									<Link to="/about">About Us</Link>{" "}
 								</li>
 								<li>
-									<Link to='/recipes' >Recipes</Link>
+									<Link to="/recipes">Recipes</Link>
 								</li>
 								<li>
-									<Link to='/kids' >Kid's Corner</Link>
+									<Link to="/kids">Kid's Corner</Link>
 								</li>
 							</ul>
 						</div>
@@ -122,7 +122,11 @@ export default function Footer() {
 									<p>
 										Copyright © 2022 Bakers Inn. All rights
 										reserved. Site by{" "}
-										<span>Bryan Vengwa</span>{" "}
+										<span>
+											<a href="https://github.com/bryanvengwa/Portfolio">
+												Bryan Vengwa
+											</a>
+										</span>{" "}
 									</p>
 								</div>
 							</div>
