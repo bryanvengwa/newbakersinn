@@ -1,12 +1,16 @@
 import "./App.scss";
+import Loader from "./components/Loader";
+
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Products from "./pages/Products";
-import Kids from "./pages/Kids";
-import Contact from "./pages/Contact";
-import Recipes from "./pages/Recipes";
+import { lazy, useState , Suspense } from "react";
+
+const Home = lazy(()=>import  ("./pages/Home"))
+const About= lazy(()=>import  ("./pages/About"))
+const Products = lazy(() => import("./pages/Products"));
+const Kids = lazy(() => import("./pages/Kids"));
+const Contact = lazy(()=>import("./pages/Contact"))
+const Recipes = lazy(()=>import("./pages/Recipes") )
+
 function App() {
 	const [isOpen, setIsOpen] = useState(false);
 	function toggle() {
@@ -51,62 +55,64 @@ function App() {
 
 	return (
 		<div>
-			<Routes>
-				<Route
-					path="/"
-					element={
-						<Home
-							currentData={currentData}
-							isOpen={isOpen}
-							headers={headers}
-							toggle={toggle}
-							activeTab={activeTab}
-							handleTabClick={handleTabClick}
-							ShowRecipeModal={ShowRecipeModal}
-							RecipeModal={RecipeModal}
-						/>
-					}
-				/>
-				<Route
-					path="/about"
-					element={<About isOpen={isOpen} toggle={toggle} />}
-				/>
-				<Route
-					path="/Products"
-					element={
-						<Products
-							isOpen={isOpen}
-							headers={headers}
-							toggle={toggle}
-							activeTab={activeTab}
-							handleTabClick={handleTabClick}
-						/>
-					}
-				/>
-				<Route
-					path="/recipes"
-					element={
-						<Recipes
-							headers={headers}
-							currentData={currentData}
-							isOpen={isOpen}
-							toggle={toggle}
-							activeTab={activeTab}
-							handleTabClick={handleTabClick}
-							ShowRecipeModal={ShowRecipeModal}
-							RecipeModal={RecipeModal}
-						/>
-					}
-				/>
-				<Route
-					path="/kids"
-					element={<Kids isOpen={isOpen} toggle={toggle} />}
-				/>
-				<Route
-					path="/contact"
-					element={<Contact isOpen={isOpen} toggle={toggle} />}
-				/>
-			</Routes>
+			<Suspense  fallback={<Loader/>} >
+				<Routes>
+					<Route
+						path="/"
+						element={
+							<Home
+								currentData={currentData}
+								isOpen={isOpen}
+								headers={headers}
+								toggle={toggle}
+								activeTab={activeTab}
+								handleTabClick={handleTabClick}
+								ShowRecipeModal={ShowRecipeModal}
+								RecipeModal={RecipeModal}
+							/>
+						}
+					/>
+					<Route
+						path="/about"
+						element={<About isOpen={isOpen} toggle={toggle} />}
+					/>
+					<Route
+						path="/Products"
+						element={
+							<Products
+								isOpen={isOpen}
+								headers={headers}
+								toggle={toggle}
+								activeTab={activeTab}
+								handleTabClick={handleTabClick}
+							/>
+						}
+					/>
+					<Route
+						path="/recipes"
+						element={
+							<Recipes
+								headers={headers}
+								currentData={currentData}
+								isOpen={isOpen}
+								toggle={toggle}
+								activeTab={activeTab}
+								handleTabClick={handleTabClick}
+								ShowRecipeModal={ShowRecipeModal}
+								RecipeModal={RecipeModal}
+							/>
+						}
+					/>
+					<Route
+						path="/kids"
+						element={<Kids isOpen={isOpen} toggle={toggle} />}
+					/>
+					<Route
+						path="/contact"
+						element={<Contact isOpen={isOpen} toggle={toggle} />}
+					/>
+				</Routes>
+			</Suspense>
 		</div>
 	);
 }

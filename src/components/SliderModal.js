@@ -65,7 +65,7 @@ export default function SliderModal(props) {
 						<div className="flex-containerA">
 							<div className="circle-container">
 								<img
-									src="imgs/numpeoplemy reactn.png"
+									src="imgs/numpeople.png"
 									className="img-fluid"
 									alt="watch"
 								/>

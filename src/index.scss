@@ -246,7 +246,7 @@ th{   padding: 0.5em; font-family: 'black'; font-size: 1.35rem; border-bottom: 3
        .heading{text-align: center; font-family: "black";  color: $blue; }
               .center{  margin-bottom: 3em; width: 100vw; 
 
-                     .tab-links{  .active{border-bottom: 0.5rem solid $gold;   color: $blue; transition: .3s;}  .hidden{display: none;} width: 100%;  font-family: 'black'; display: flex; text-align: center; li{padding: 0.3em; font-size: 1.2rem; } border-bottom: 2px solid $tab; justify-content: center;  }
+                     .tab-links{  .active{border-bottom: 0.5rem solid $gold;   color: $blue; transition: .3s;}  .hidden{display: none;} width: 100%;  font-family: 'black'; display: flex; text-align: center; li{padding: 0.3em; font-size: 1.2rem; }  justify-content: center;  }
               }
        
        .flex-container{  color: $blue; .hidden{display: none; transition: .3s; } .active{display: block; transition: .3s; }
@@ -309,9 +309,9 @@ th{   padding: 0.5em; font-family: 'black'; font-size: 1.35rem; border-bottom: 3
   overflow-x: scroll;
 //   white-space: nowrap;
 }
-       .flex-container{ margin-top: 2em;   display: inline-flex; align-items: center; width:100%;   height: fit-content;  
+       .flex-container{ margin-top: 2em;   display: inline-flex; align-items: center; width:100%;   height: fit-content;  flex-wrap: nowrap;
               .card{ background: $gfade; max-width: 22rem !important;  height: auto;   flex: 0 0 auto;     display: inline-block;z-index: 2000;
-  vertical-align: top; 
+  vertical-align: top;  margin-left: 2em;
                      
                      .img-container{ height: 22rem; display: flex; justify-content:  center; img{height: 100%; width: unset; margin-top: -3em;}}
                      .second-container{ height: 18rem;}
@@ -432,6 +432,45 @@ ul{li{
 
 
 .hidden{ display: none}
+.loader{ position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; display: flex; justify-content: center;align-items: center; background-color: white; 
+       transition: opacity 0.5s , visibility 0.5s; z-index: 5000;
+
+
+
+}
+.loader::after{
+       content: "";
+       width: 75px;
+       height: 75px;
+       border: 15px solid $gold;
+       border-top-color: $gfade;
+       border-radius: 50%;
+       animation: loading 0.75s ease infinite;
+ 
+
+}
+@keyframes loading {
+       from{
+              transform: rotate(0turn);
+       }to{
+              transform: rotate(1turn);
+       }
+       
+}
+@keyframes loading {
+       from{
+              transform: rotate(0turn);
+       }to{
+              transform: rotate(1turn);
+       }
+       
+}
+button:hover{transform: scale(1.04) !important; }
+.more:hover{transform: scale(1.04) !important; }
+.read-more:hover{transform: scale(1.04) !important; }
+.arrow:hover{transform: scale(1.1) !important; }
+.complete:hover{transform: scale(1.04) !important; }
+.tab-links , .arrow{cursor: pointer;}
 
 /*
 ####################################################
@@ -553,6 +592,7 @@ ul{li{
 
 }
 }
+
 .bookings{ position: relative;
        // .hidden{display: none;}
        .close-modalA {position: absolute; height: 2rem; width: 2rem; border-radius: 50%; top: 0.4em;right: 0.4em;font-size: 1rem; padding: 0.3em; color: white; cursor: pointer;border: none;background: $blue;
@@ -588,6 +628,15 @@ ul{li{
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
+       #recipe{     .flex-container{ 
+              .card{margin-left: -2em;}
+              .manager{ 
+  margin-left: -8em;
+                     
+         
+              }
+       }
+       }
              .nav{ 
                       margin-bottom: -d1em; a{.logo{ height: 3rem; width: 12rem; z-index: 1; margin-left: 0em;  img{ margin-top: 1em; margin-left: 3.3em;  width: 100%; object-fit: contian; }}}
 
@@ -746,6 +795,13 @@ ul{li{
  #maze-background{ border-radius: 5px; padding: 3em; background: $lighblue;}
 
 }
+       #recipe{     .flex-container{ 
+        .manager{
+margin-left: -20em;
+        }
+
+       }
+       }
 
 }
 

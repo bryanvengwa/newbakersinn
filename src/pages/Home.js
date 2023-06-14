@@ -44,7 +44,7 @@ export default function Home(props) {
 								to you.
 							</p>
 							<button
-								className="btn openModalA"
+								className="openModalA"
 								onClick={booking}
 							>
 								BOOK FACTORY TOUR
@@ -179,7 +179,7 @@ export default function Home(props) {
 							</div>
 
 							<div className="div ">
-								<button className="btn button">Submit</button>
+								<button className=" button">Submit</button>
 							</div>
 						</div>
 					</div>
@@ -208,7 +208,7 @@ export default function Home(props) {
 								impact in the local community.{" "}
 							</p>
 							<button
-								className="btn openModalB"
+								className="openModalB"
 								onClick={donation}
 							>
 								REQUEST DONATION
@@ -327,7 +327,7 @@ export default function Home(props) {
 
 						<div className="div ">
 							<button
-								className="btn button openNext"
+								className=" button openNext"
 								onClick={donation}
 							>
 								Proceed to next step
@@ -364,7 +364,7 @@ export default function Home(props) {
 						</div>
 					</form>
 					<div className="div ">
-						<button className="btn buttons">
+						<button className=" buttons">
 							Submit Application
 						</button>
 					</div>

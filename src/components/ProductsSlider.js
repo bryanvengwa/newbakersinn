@@ -6,7 +6,6 @@ export default function ProductsSlider(props) {
 		width: '200%',
 		paddingTop: '2em',
 	}
-	console.log(props);
 	return (
 		<>
 			<section className="recipe" id="recipe">
@@ -69,7 +68,14 @@ export default function ProductsSlider(props) {
 											: { width: "100%" }
 									}
 								>
-									<div className="card" width="22rem">
+									<div
+										className={`card ${
+											props.activeTab === 1
+												? "manager"
+												: ""
+										}`}
+										width="22rem"
+									>
 										<div className="img-container">
 											{props.activeTab === 1 && (
 												<img
@@ -196,7 +202,14 @@ export default function ProductsSlider(props) {
 											)}
 										</div>
 									</div>
-									<div className="card" width="22rem">
+									<div
+										className={`card ${
+											props.activeTab === 1
+												? "manager"
+												: ""
+										}`}
+										width="22rem"
+									>
 										<div className="img-container">
 											{props.activeTab === 1 && (
 												<img
@@ -320,7 +333,14 @@ export default function ProductsSlider(props) {
 											)}
 										</div>
 									</div>
-									<div className="card" width="22rem">
+									<div
+										className={`card ${
+											props.activeTab === 1
+												? "manager"
+												: ""
+										}`}
+										width="22rem"
+									>
 										<div className="img-container">
 											{props.activeTab === 1 && (
 												<img
@@ -448,7 +468,14 @@ export default function ProductsSlider(props) {
 									</div>
 
 									{props.activeTab === 1 && (
-										<div className="card" width="22rem">
+										<div
+											className={`card ${
+												props.activeTab === 1
+													? "manager"
+													: ""
+											}`}
+											width="22rem"
+										>
 											<div className="img-container">
 												{props.activeTab === 1 && (
 													<img
@@ -529,7 +556,14 @@ export default function ProductsSlider(props) {
 									)}
 
 									{props.activeTab === 1 && (
-										<div className="card" width="22rem">
+										<div
+											className={`card ${
+												props.activeTab === 1
+													? "manager"
+													: ""
+											}`}
+											width="22rem"
+										>
 											<div className="img-container">
 												{props.activeTab === 1 && (
 													<img

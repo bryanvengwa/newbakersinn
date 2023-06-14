@@ -1,15 +1,19 @@
-import React  from 'react'
+import React from "react";
 
 export default function Slider(props) {
+	const borderStyle = {
+		borderBottom:
+			props.activeTab === 2 ? "none" : "2px solid rgb(149, 136, 184)",
+	};
 
-  return (
+	return (
 		<>
 			<section className="recipe">
 				<div className="container">
 					<h1 className="heading">Baker's Recipes</h1>
 					<div className="row">
 						<div className="center">
-							<ul className="tab-links">
+							<ul style={borderStyle} className="tab-links">
 								<li
 									className={`tabs taber1  ${
 										props.activeTab === 1 ? "active" : ""
@@ -240,5 +244,5 @@ export default function Slider(props) {
 				</div>
 			</section>
 		</>
-  );
+	);
 }

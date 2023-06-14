@@ -123,7 +123,7 @@ export default function Footer() {
 										Copyright © 2022 Bakers Inn. All rights
 										reserved. Site by{" "}
 										<span>
-											<a href="https://github.com/bryanvengwa/Portfolio">
+											<a href="https://github.com/bryanvengwa">
 												Bryan Vengwa
 											</a>
 										</span>{" "}
