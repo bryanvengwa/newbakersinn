@@ -6,9 +6,9 @@ export default function HomeProductsRange() {
 		<>
 			<section className="products">
 				<div className="container">
-					<div className="row">
+					<div className="row justify-content-center">
 						<h1>Our Product Range</h1>
-						<div className="col-md-3">
+						<div className="col-md-3 d-flex product-responsiveness ">
 							<div className="img-container">
 								<img
 									src="imgs/breadslices.png"
@@ -20,7 +20,7 @@ export default function HomeProductsRange() {
 								</div>
 							</div>
 						</div>
-						<div className="col-md-3">
+						<div className="col-md-3 d-flex product-responsiveness">
 							<div className="img-container">
 								<img
 									src="imgs/pie.png"
@@ -32,7 +32,7 @@ export default function HomeProductsRange() {
 								</div>
 							</div>
 						</div>
-						<div className="col-md-3">
+						<div className="col-md-3 d-flex product-responsiveness">
 							<div className="img-container">
 								<img
 									src="imgs/scones.png"
@@ -45,7 +45,7 @@ export default function HomeProductsRange() {
 								</div>
 							</div>
 						</div>
-						<div className="col-md-3">
+						<div className="col-md-3 d-flex product-responsiveness">
 							<div className="img-container">
 								<img
 									src="imgs/donuts.png"

@@ -7,10 +7,10 @@ export default function HomeAbout() {
 			<section className="about">
 				<div className="container">
 					<div className="row">
-						<div className="col-lg-5 col-md-5">
+						<div className="col-lg-5 about-responsiveness col-md-5 about-responsiveness">
 							<h1>About Baker's Inn</h1>
 						</div>
-						<div className=" col-lg-7 col-md-7">
+						<div className=" col-lg-7 about-responsiveness col-md-7 about-responsiveness">
 							<p>
 								It all started in the eighties when Baker's Inn
 								was just a small confectionery company that
@@ -26,7 +26,7 @@ export default function HomeAbout() {
 						</div>
 					</div>
 					<div className="row bottom">
-						<div className="col-md-3">
+						<div className="col-md-3 about-responsiveness">
 							<div className="img-container">
 								<img
 									src="imgs/sandwich.png"
@@ -35,7 +35,7 @@ export default function HomeAbout() {
 								/>
 							</div>
 						</div>
-						<div className="col-md-3">
+						<div className="col-md-3 about-responsiveness">
 							<div className="img-container">
 								<img
 									src="imgs/pie.png"
@@ -44,7 +44,7 @@ export default function HomeAbout() {
 								/>
 							</div>
 						</div>
-						<div className="col-md-3">
+						<div className="col-md-3 about-responsiveness">
 							<div className="img-container">
 								<img
 									src="imgs/doughnut tea.png"
@@ -53,7 +53,7 @@ export default function HomeAbout() {
 								/>
 							</div>
 						</div>
-						<div className="col-md-3">
+						<div className="col-md-3 about-responsiveness">
 							<div className="img-container">
 								<img
 									src="imgs/slices.png"
