@@ -511,7 +511,14 @@ export default function ProductsSlider(props) {
 										</div>
 									)}
 									{props.activeTab === 1 && (
-										<div className="card" width="22rem">
+										<div
+											className={`card ${
+												props.activeTab === 1
+													? "manager"
+													: ""
+											}`}
+											width="22rem"
+										>
 											<div className="img-container">
 												{props.activeTab === 1 && (
 													<img
