@@ -59,7 +59,7 @@ export default function ProductsSlider(props) {
 						</div>
 
 						<div id="flex">
-							<div class="scrollable-div">
+							<div className="scrollable-div">
 								<div
 									className="flex-container "
 									style={
